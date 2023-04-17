@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>stephane.analysis.vgradient &#8212; Turbotslab 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="stephane.cine" href="stephane.cine.html" />
+    <link rel="prev" title="stephane.analysis.velocity_distribution" href="stephane.analysis.velocity_distribution.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="stephane.cine.html" title="stephane.cine"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="stephane.analysis.velocity_distribution.html" title="stephane.analysis.velocity_distribution"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Turbotslab 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="stephane.html" >stephane</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="stephane.analysis.html" accesskey="U">stephane.analysis</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">stephane.analysis.vgradient</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-stephane.analysis.vgradient">
+<span id="stephane-analysis-vgradient"></span><h1>stephane.analysis.vgradient<a class="headerlink" href="#module-stephane.analysis.vgradient" title="Permalink to this heading">¶</a></h1>
+<p>Computation of velocity field related quantities.
+Include :
+- Energy 
+- vorticity
+- 2d divergence
+- strain tensor for 2d matrices. Extension to 3d to be implemented</p>
+<p class="rubric">Functions</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute</span></code>(M, name[, step, Dt, display])</p></td>
+<td><p>Compute a physical quantity on the Mdata Can be either : vorticity : vorticity field strain : strain tensor E : total kinetic energy or return any attribute of M if it already exists</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_frame</span></code>(M, name, frame[, step, ...])</p></td>
+<td><p>Compute a physical quantity on the Mdata, for one frame Can be either : vorticity : vorticity field strain : strain tensor E : total kinetic energy or return any attribute of M if it already exists</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">dU_field</span></code>(M, i[, step, type, rescale])</p></td>
+<td><p>Compute the derivatives field using the stephane.jhtd.strain_tensor module INPUT ----- M : Mdata set object     Contain the data, either 2d or 3d in space  i : int     index in time. Could be removed to compute the strain tensor both in space and time         OUTPUT ----- omega : np array of dimension (nx-6,ny-6)     vorticity field name : str     name of the field to add to the dataset.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">enstrophy_field</span></code>(M, i[, step])</p></td>
+<td><p>Compute the enstrophy field as the square of vorticity</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">example</span></code>(M)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_E</span></code>(M, i[, step])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_Nvec</span></code>(M, i)</p></td>
+<td><p>Generate a Matrix with vector components for matrix manipulation</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">measure</span></code>(M, name[, step, Dt, display])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">strain_field</span></code>(M, i[, step, rescale, type])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">strain_maps</span></code>(M, i)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">vorticity_field</span></code>(M, i[, step, type, rescale])</p></td>
+<td><p>Compute the vorticity field using the stephane.jhtd.strain_tensor module INPUT ----- M : Mdata set object     Contain the data, either 2d or 3d in space  i : int     index in time. Could be removed to compute the strain tensor both in space and time         OUTPUT ----- omega : np array of dimension (nx-6,ny-6)     vorticity field name : str     name of the field to add to the dataset.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="stephane.analysis.velocity_distribution.html"
+                          title="previous chapter">stephane.analysis.velocity_distribution</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="stephane.cine.html"
+                          title="next chapter">stephane.cine</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/modules/stephane.analysis.vgradient.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="stephane.cine.html" title="stephane.cine"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="stephane.analysis.velocity_distribution.html" title="stephane.analysis.velocity_distribution"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Turbotslab 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="stephane.html" >stephane</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="stephane.analysis.html" >stephane.analysis</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">stephane.analysis.vgradient</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Turbotslab.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>stephane.jhtd.geom &#8212; Turbotslab 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="stephane.jhtd.get" href="stephane.jhtd.get.html" />
+    <link rel="prev" title="stephane.jhtd.cutout" href="stephane.jhtd.cutout.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="stephane.jhtd.get.html" title="stephane.jhtd.get"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="stephane.jhtd.cutout.html" title="stephane.jhtd.cutout"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Turbotslab 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="stephane.html" >stephane</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="stephane.jhtd.html" accesskey="U">stephane.jhtd</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">stephane.jhtd.geom</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-stephane.jhtd.geom">
+<span id="stephane-jhtd-geom"></span><h1>stephane.jhtd.geom<a class="headerlink" href="#module-stephane.jhtd.geom" title="Permalink to this heading">¶</a></h1>
+<p class="rubric">Functions</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">average_values</span></code>(eigen, omega, cosine[, d])</p></td>
+<td><p>Compute the average values of strain tensor diagonal compnonents and enstrophy production  Can be compare qualitatively to Tsinober 1998 (both experiments and old DNS data) outputs are printed in the console INPUT ----- eigen : Dictionnary containing the eigenvalues Lambda and eigenvectors lambda omega : Dictionnary containing components of the vorticity field cosine : Dictionnary containing orientation angle between lambda and omega OUTPUT ----- None</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">energy_distribution</span></code>(data)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">hist</span></code>(Y, label[, step, fignum])</p></td>
+<td><p>Compute and plot the 1d histogramm in semilogy INPUT -----        Y : input data, list format     in any format that can be translated by numpy.asarray label : string     label to use for the plot step : relative number of histogramm steps (optional)     step = 100 corresponds to N/100 bins where N is the total amount of data     OUTPUT ------ None</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">norm</span></code>(u[, axis])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">plots</span></code>(eigen, omega, cosine, step)</p></td>
+<td><p>Make plots of geometrical quantities associated to the strain tensor  (eigenvalues, vorticity and stretching vector) INPUT ----- eigen : Dictionnary containing the eigenvalues Lambda and eigenvectors lambda omega : Dictionnary containing components of the vorticity field cosine : orientation angle between lambda and omega step : average number of data point per bin OUTPUT ----- figs : dict     dictionnary of output figures, the key correspond to the number of the figure     associated value is a title in string format (root name for an eventual saving process)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">process</span></code>(data)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">subset</span></code>(eigen, omega, cosine, condition, val)</p></td>
+<td><p>Select a subset of the data corresponding to a given condition</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="stephane.jhtd.cutout.html"
+                          title="previous chapter">stephane.jhtd.cutout</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="stephane.jhtd.get.html"
+                          title="next chapter">stephane.jhtd.get</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/modules/stephane.jhtd.geom.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="stephane.jhtd.get.html" title="stephane.jhtd.get"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="stephane.jhtd.cutout.html" title="stephane.jhtd.cutout"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Turbotslab 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="stephane.html" >stephane</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="stephane.jhtd.html" >stephane.jhtd</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">stephane.jhtd.geom</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Turbotslab.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>stephane.display.graphes &#8212; Turbotslab 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="stephane.display.grid_turbulence" href="stephane.display.grid_turbulence.html" />
+    <link rel="prev" title="stephane.display" href="stephane.display.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="stephane.display.grid_turbulence.html" title="stephane.display.grid_turbulence"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="stephane.display.html" title="stephane.display"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Turbotslab 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="stephane.html" >stephane</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="stephane.display.html" accesskey="U">stephane.display</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">stephane.display.graphes</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-stephane.display.graphes">
+<span id="stephane-display-graphes"></span><h1>stephane.display.graphes<a class="headerlink" href="#module-stephane.display.graphes" title="Permalink to this heading">¶</a></h1>
+<p class="rubric">Functions</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mplot</span></code>(M, field, frame[, auto_axis, step, W, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">avg_from_dict</span></code>(dd, keyx, keyy, times[, ...])</p></td>
+<td><p>Compute the average function from a dictionnary with keys (time,keyx) (time,keyy) for time in times</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">cla</span></code>(fignum)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">clegende</span></code>(c, c_legend)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">color_plot</span></code>(x, y, Z[, fignum, vmin, vmax, ...])</p></td>
+<td><p>Color coded plot INPUT -----        x : 2d numpy array y : 2d numpy array Z : 2d numpy array  OUTPUT ------ None</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">colorbar</span></code>([fignum, label])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">distribution</span></code>(Y[, normfactor, a, label, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">errorbar</span></code>(x, y, xerr, yerr[, fignum, label, ...])</p></td>
+<td><p>plot a graph using matplotlib.pyplot.errorbar function fignum can be specified cut x data if longer than y data any kwargs from plot can be passed</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">figure_label</span></code>(x_legend, y_legend, title[, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_axis_coord</span></code>(M[, direction])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_data</span></code>(fig[, cplot])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">graph</span></code>(x, y[, fignum, label, subplot])</p></td>
+<td><p>plot a graph using matplotlib.pyplot.plot function fignum can be specified cut x data if longer than y data any kwargs from plot can be passed Use the homemade function refresh() to draw and plot the figure, no matter the way python is called (terminal, script, notebook)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">graphloglog</span></code>(*args, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">hist</span></code>(Y[, Nvec, fignum, num, step, label, ...])</p></td>
+<td><p>Plot histogramm of Y values</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">legende</span></code>(x_legend, y_legend, title[, ax, ...])</p></td>
+<td><p>Add a legend to the current figure</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_title</span></code>(keylist, d)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">movie</span></code>(M, field[, indices, compute, label, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pause</span></code>([time])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pdf</span></code>(M, field, frame[, Dt, Dx, label, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pdf_ensemble</span></code>(Mlist, field, frame[, Dt, Dx, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot</span></code>(fun, x, y[, fignum, label, subplot])</p></td>
+<td><p>plot a graph using the function fun fignum can be specified any kwargs from plot can be passed Use the homemade function refresh() to draw and plot the figure, no matter the way python is called (terminal, script, notebook)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_axes</span></code>(fig, num)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">refresh</span></code>([hold, block, ipython])</p></td>
+<td><p>Refresh the display of the current figure.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_special_chars</span></code>(string[, chars_rm, ...])</p></td>
+<td><p>Remove characters from a typical latex format to match non special character standards INPUT ----- string : str     input string chars_rm : str list. Default value : ['$','',') ']     char list to be simply removed chars_rp : str list. Default value : ['( ',',']     char list to be replaced by a '_' OUTPUT ----- string : str     modified string.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">rotate</span></code>(X, Y, angle)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">save_fig</span></code>(fignum, filename[, frmt, dpi, ...])</p></td>
+<td><p>Save the figure fignumber in the given filename INPUT ----- fignumber : number of the fig to save filename : name of the saving file fileFormat (opt) dpi (opt) : number of dpi for image based format.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">save_figs</span></code>(figs[, savedir, suffix, prefix, ...])</p></td>
+<td><p>save a dictionnary of labeled figures using dictionnary elements</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">save_graphes</span></code>(M, figs[, prefix, suffix])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">semilogx</span></code>(*args, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">semilogy</span></code>(*args, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_axis</span></code>(xmin, xmax, ymin, ymax)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_fig</span></code>(fignum[, subplot])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_title</span></code>(M[, opt])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">subplot</span></code>(i, j, k)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">time_label</span></code>(M, frame)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">time_stamp</span></code>(M, i[, x0, y0, fignum])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">title</span></code>(M)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">vfield_plot</span></code>(M, frame[, fignum])</p></td>
+<td><p>Plot a 2d velocity fields with color coded vectors Requires fields for the object M : Ux and Uy INPUT -----        M : Mdata set of measure  frame : number of the frame to be analyzed fignum (opt) : asking for where the figure should be plotted OUTPUT ------ None</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="stephane.display.html"
+                          title="previous chapter">stephane.display</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="stephane.display.grid_turbulence.html"
+                          title="next chapter">stephane.display.grid_turbulence</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/modules/stephane.display.graphes.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="stephane.display.grid_turbulence.html" title="stephane.display.grid_turbulence"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="stephane.display.html" title="stephane.display"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Turbotslab 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="stephane.html" >stephane</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="stephane.display.html" >stephane.display</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">stephane.display.graphes</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Turbotslab.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    </div>
+  </body>
+</html>

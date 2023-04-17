@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>stephane.analysis.spreading &#8212; Turbotslab 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="stephane.analysis.statP" href="stephane.analysis.statP.html" />
+    <link rel="prev" title="stephane.analysis.length_scales" href="stephane.analysis.length_scales.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="stephane.analysis.statP.html" title="stephane.analysis.statP"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="stephane.analysis.length_scales.html" title="stephane.analysis.length_scales"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Turbotslab 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="stephane.html" >stephane</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="stephane.analysis.html" accesskey="U">stephane.analysis</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">stephane.analysis.spreading</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-stephane.analysis.spreading">
+<span id="stephane-analysis-spreading"></span><h1>stephane.analysis.spreading<a class="headerlink" href="#module-stephane.analysis.spreading" title="Permalink to this heading">¶</a></h1>
+<p>Created on Wed Oct 21 15:34:54 2015</p>
+<p>&#64;author: stephane</p>
+<p class="rubric">Functions</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">advection</span></code>(Dt, i, z, Ux_moy, Uy_moy, Ux_rms, ...)</p></td>
+<td><p>Advect the current profile by the instantaneous x-averaged Uz profile</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">diffusion</span></code>(M)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">display_profile</span></code>(M, i, t0, z, Ux_moy, Uy_moy, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_profile</span></code>(M, t0, z, U[, p, log])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">front</span></code>(M)</p></td>
+<td><p>From a temporal measurement of a turbulent spreading situation, compute the position of the front.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">front_time</span></code>(M, i, t0[, Dt, display])</p></td>
+<td><p>Compute the time of propagation of a front.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">half_width</span></code>(z, Ux_rms, Uy_rms, E0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">initial_shape</span></code>([offset])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">profile_average</span></code>(Mlist, t0[, Dt, display])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">signal_noise</span></code>(M, z, mid)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">solve_diffusion</span></code>(z, U, D, t)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">spreading</span></code>(Mlist[, logscale])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_front</span></code>(M, Z, frame)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">velocity_profile</span></code>(M, t0[, Dt, display])</p></td>
+<td><p>Comnpute the velocity profile of U_rms along the vertical direction.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">vertical_spreading</span></code>(M, N[, Dt, label])</p></td>
+<td><p>Compute the vertical profile of RMS velocity as a function of time</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="stephane.analysis.length_scales.html"
+                          title="previous chapter">stephane.analysis.length_scales</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="stephane.analysis.statP.html"
+                          title="next chapter">stephane.analysis.statP</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/modules/stephane.analysis.spreading.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="stephane.analysis.statP.html" title="stephane.analysis.statP"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="stephane.analysis.length_scales.html" title="stephane.analysis.length_scales"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Turbotslab 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="stephane.html" >stephane</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="stephane.analysis.html" >stephane.analysis</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">stephane.analysis.spreading</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Turbotslab.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>stephane.jhtd.strain_tensor &#8212; Turbotslab 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="stephane.manager" href="stephane.manager.html" />
+    <link rel="prev" title="stephane.jhtd.get" href="stephane.jhtd.get.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="stephane.manager.html" title="stephane.manager"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="stephane.jhtd.get.html" title="stephane.jhtd.get"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Turbotslab 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="stephane.html" >stephane</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="stephane.jhtd.html" accesskey="U">stephane.jhtd</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">stephane.jhtd.strain_tensor</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-stephane.jhtd.strain_tensor">
+<span id="stephane-jhtd-strain-tensor"></span><h1>stephane.jhtd.strain_tensor<a class="headerlink" href="#module-stephane.jhtd.strain_tensor" title="Permalink to this heading">¶</a></h1>
+<p>Computation of strain tensor for arbitrary size matrices</p>
+<p class="rubric">Functions</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Lambda</span></code>(a[, d])</p></td>
+<td><p>Compute the eigenvalues and the eigenvector of the symetric part of a matrix a INPUT -----        a : numpy array of dimension d+2     d+2 np array of dimensions (nx,ny,nz,d,d) d : int     spatial dimension. default value is 3     It might not work for other dimensions than 3 for now   OUTPUT ----- eigen : dictionnary containing eigenvalues, eigenvectors and asymetry epsilon     epsilon refer to the adimensionnalized value of the intermediate eigen value      the dictionnary contains the following fields :     Lambda_i : (i from 0 to d) eigenvalues     lambda_i : (i from 0 to d) eigenvectors     epsilon.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">alignements</span></code>(eigen, omega, W[, d])</p></td>
+<td><p>Compute the angle defined by (lambda,omega), (lambda,W), (W, omega)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">derivative</span></code>(U, i, j[, d, step, jhtd])</p></td>
+<td><p>Compute the derivative of the j-th component of U along the i direction</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">derivative_C</span></code>(U, fx, fy, x0, y0[, d, b])</p></td>
+<td><p>Alternative way of computing derivatives by using a line integral on a circle. Return the tensor of deformation dUij. only available in 2d for now  vorticity (antisymetric part of 2d tensor) and strain (symetric part of the 2d tensor) Could be decomposed in each component by taking the x and y component of U respectively INPUT ----- U : numpy array of dimension 2+1     input data, the last dimension of U is of length 2 (vector field) fx,fy : function with two arguments     fx,fy should be the interpolation function of U[...,0] and U[...,1] respectively fx : interpolation function of U[...,0] OUTPUT ----- dU : 2x2 numpy array     deformation tensor dUi/dxj with (i,j) in {0,1}^2.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">derivative_C_GPU</span></code>(U, f, x0, y0, axis[, d, b])</p></td>
+<td><p>Alternative way of computing derivatives by using a line integral on a circle.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">derivative_C_mat</span></code>(x, y, U[, d, b])</p></td>
+<td><p>Alternative way of computing derivatives by using a line integral on a circle. Return the strain tensor dUi/dxj in 2d INPUT ----- x,y : 1d np arrays. x and y coordinates U : input data, numpy array of dimensions d+1. the last dimension of U is of length d (vector field) d : dimension. only implemented in 2d for now b : float     circle radius used to compute the line integral. default value is 1.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">divergence_2d</span></code>(tau[, d, norm])</p></td>
+<td><p>Compute the 2d divergence from the symetric part of the strain tensor matrix tau INPUT -----        tau : numpy array of dimension 3 d : int     spatial dimension. default value is 3     It might not work for other dimensions than 3 for now OUTPUT ----- div : numpy array of dimensions d + 1     the last dimension contains 1 value corresponding to the 2d divergence.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">evaluate</span></code>(X, Y, f[, n])</p></td>
+<td><p>Evaluate f at a arbitrary set of points of coordinates X and Y</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">geom</span></code>(U[, d, jhtd])</p></td>
+<td><p>Compute eigenvectors, vorticity and geometrical quantities from a d matrix U INPUT  ----- U : d dimensions np array     data  d : int     dimension, default is 3 OUTPUT ----- eigen : dict      contain the eigenvalues Lambda and eigenvectors lambda fields omega : dict      contain the components of the vorticity field cosine : dict     contain orientation angle between lambda and omega</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">normalize</span></code>(U[, d, p])</p></td>
+<td><p>Normalize a matrix U using the p-norm  INPUT -----        U : numpy array of dimension d+1 d : int     spatial dimension. default value is 3 p : float, value for the p-norm computation. default is euclidian norm (p=2) OUTPUT ----- U : numpy array of dimension d+1     Normalized, so that sum(U[i,j,k,:]**2)=1.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">project</span></code>(U, eigen[, d])</p></td>
+<td><p>Compute the strain along the axis U, given the strain tensor expressed in a eigenbasis of decomposition INPUT ----- U : (N,d) np array     N vectors defining the direction of computing strain eigen : dict     Contains eigenvalues and eigenvectors of a Tensor matrix (commonly the strain tensor) OUTPUT -----</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">strain_distribution</span></code>(data[, jhtd])</p></td>
+<td><p>Compute eigenvectors, vorticity and geometrical quantities</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">strain_tensor</span></code>(U[, d, step, jhtd])</p></td>
+<td><p>Compute the strain tensor of a d dimensions matrix using a 6th order sheme in space       INPUT -----        U : input data, numpy array format in d+1 dimensions     U[...,0] : x component, U[...,1] : y component, and so on     Last dimension of U must be equal to d     if U contains a time axis, the strain tensor calculation will also return dU_i/dt  d : int     spatial dimension. default value is 3 OUTPUT ------ dU : d+2 np array     strain tensor. The two last dimensions have shape d x d. U[...,i,j] = .</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">strain_tensor_C</span></code>(U[, d, b, step])</p></td>
+<td><p>Compute the strain tensor of a 2+1 dimension matrix using a circular integral (thanks to Dr Leonardo Gordillo) Value of b=1.5 /2 is the most accurate radius circle according to tests performed on experimental PIV data of vortex core size INPUT -----        U : input data, numpy array format in d+1 dimensions     U[...,0] : x component, U[...,1] : y component, and so on. Last dimension of U must be equal to d d : int     spatial dimension. default value is 3 b : float     radius of the circle used for the circular integral OUTPUT ------ dU : d+2 np array     strain tensor. The two last dimensions have shape d x d. U[...,i,j] = dUj / dxi.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">strain_tensor_loc</span></code>(U, i, j[, d, b])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">stretching_vector</span></code>(dU, omega[, d, norm])</p></td>
+<td><p>Compute the stretching vector W = omega_i s_ij from the strain tensor and the vorticity INPUT ----- dU : np array of dimensions n[0],...,n[d],d,d. (d=3 by default)     strain tensor computed from strain_tensor function omega : np array of dimension n[0],...,n[d],d. (d=3 by default)     vorticity vector d : int     spatial dimension. default value is 3 norm : bool. default False      Normalize the result (or not) OUTPUT ----- W : np array of dimension n[0],...,n[d],d. (d=3 by default)     stretching vector W_i = sum((dU[i,j]omega[j])).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">vorticity</span></code>(tau[, d, norm])</p></td>
+<td><p>Compute the vorticity from the asymetric part of the strain tensor matrix tau INPUT -----        tau : numpy array of dimension 3 d : int     spatial dimension. default value is 3     It might not work for other dimensions than 3 for now OUTPUT ----- vorticity : numpy array of dimensions d + 1     the last dimension contains d values corresponding to the components of the vorticity enstrophy : numpy array of dimensions d     squared modulus of the vorticity.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="stephane.jhtd.get.html"
+                          title="previous chapter">stephane.jhtd.get</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="stephane.manager.html"
+                          title="next chapter">stephane.manager</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/modules/stephane.jhtd.strain_tensor.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="stephane.manager.html" title="stephane.manager"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="stephane.jhtd.get.html" title="stephane.jhtd.get"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Turbotslab 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="stephane.html" >stephane</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="stephane.jhtd.html" >stephane.jhtd</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">stephane.jhtd.strain_tensor</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Turbotslab.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    </div>
+  </body>
+</html>

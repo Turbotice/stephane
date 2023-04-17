@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>stephane.analysis.corr &#8212; Turbotslab 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="stephane.analysis.corr_2" href="stephane.analysis.corr_2.html" />
+    <link rel="prev" title="stephane.analysis.compilation" href="stephane.analysis.compilation.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="stephane.analysis.corr_2.html" title="stephane.analysis.corr_2"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="stephane.analysis.compilation.html" title="stephane.analysis.compilation"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Turbotslab 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="stephane.html" >stephane</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="stephane.analysis.html" accesskey="U">stephane.analysis</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">stephane.analysis.corr</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-stephane.analysis.corr">
+<span id="stephane-analysis-corr"></span><h1>stephane.analysis.corr<a class="headerlink" href="#module-stephane.analysis.corr" title="Permalink to this heading">¶</a></h1>
+<p>Created on Thu Jul 30 14:35:11 2015</p>
+<p>&#64;author: stephane</p>
+<p class="rubric">Functions</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">chose_axe</span></code>(M, t, axes[, Dt])</p></td>
+<td><p>Chose N axis of a Mdata set INPUT ----- M : Madata object t : int     time index axes : string list      Possible values are : 'E', 'Ux', 'Uy', 'strain', 'omega' OUTPUT -----</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_Ct</span></code>(M[, tlist, axes, p, display, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_tc</span></code>(Mlist, Corr_fun, fields[, log])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">corr_v</span></code>(M, t, indices[, avg, axes, p, average])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">corr_v_d</span></code>(Mlist, t[, axes, N, Dt, p, ...])</p></td>
+<td><p>compute the correlation function in space at a given time. Average over space (ie along d-1 dimensions of Mlist[axes[0]]),and eventually over time INPUT ------ M : Mdata object     must have attributes : t, fields ('Ux','Uy', ...)     must have method shape() t : int     time index axes : 2 elements string list     attributes of M to be used for the correlation function N : int     Number of frames before and after time t. p : int. default value is 1     power of the fields C_p(Dt) = U1**p * U2**p / &lt;U1**2p &gt; display : bool. default value is false.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">corr_v_t</span></code>(Mlist, t[, axes, N, p, display, ...])</p></td>
+<td><p>compute the correlation function in time around a given time. Average over space (ie along d-1 dimensions of Mlist[axes[0]]) INPUT ------ M : Mdata object     must have attributes : t, fields ('Ux','Uy', ...)     must have method shape() t : int     time index axes : 2 elements string list     attributes of M to be used for the correlation function N : int     Number of frames before and after time t. p : int. default value is 1     power of the fields C_p(Dt) = U1**p * U2**p / &lt;U1**2p &gt; display : bool. default value is false.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">corr_v_tn</span></code>(M, t, indices[, avg, p])</p></td>
+<td><p>Compute the correlation coefficient at time t for a collection of pair indices</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">correlation_functions</span></code>(M, dlist, indices[, Dt])</p></td>
+<td><p>compute two points correlation functions</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">correlation_length</span></code>(d, X)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">d_2pts</span></code>(u, d[, epsilon])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">d_2pts_rand</span></code>(u, d, N[, epsilon])</p></td>
+<td><p>Return N pairs of indice points distant from d</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">display_corr_vs_t</span></code>(M, dlist, indices[, step, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">hist_Sp</span></code>(M, t[, p])</p></td>
+<td><p>compute the p-th structure function &lt;v(r)**p-v(r+d)**p&gt;_{x,y}</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">save_matrix_test</span></code>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">spatial_correlation</span></code>(M[, compute, rootdir, ...])</p></td>
+<td><p>Compute the spatial correlation function</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">stat_corr_t</span></code>(M, t[, Dt, axes, p, display, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">structure_function</span></code>(M, t, indices[, axes, p])</p></td>
+<td><p>Compute structure functions from a Mdata set INPUT ----- M : Mdata object t : int      time index indices : list of tuple      list of pair of indices, used as the sample of Mdata to compute two points quantities axe : string. Possible values are : 'E', 'xx', 'yy', 'xy'     to be implemented :  'l' : longitudinal, 't' : transverse OUTPUT ----- C : list of float     list of evaluated structure functions on the positions specified by the list indices.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">t_c</span></code>(Mlist, t[, field, N, p, display])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">time_correlation</span></code>(Mlist[, indices, display])</p></td>
+<td><p>Compute the spatial averaged time of velocity autocorrelation Velocity autocorrelation functions in time are fitted by an exponential in time. Typical time tc gives the time correlation INPUT ----- Mlist : list of Mdata indices : list of int     indices of Mlist elements to process. default value process all the elements display : bool     default value False OUTPUT -----.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="stephane.analysis.compilation.html"
+                          title="previous chapter">stephane.analysis.compilation</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="stephane.analysis.corr_2.html"
+                          title="next chapter">stephane.analysis.corr_2</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/modules/stephane.analysis.corr.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="stephane.analysis.corr_2.html" title="stephane.analysis.corr_2"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="stephane.analysis.compilation.html" title="stephane.analysis.compilation"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Turbotslab 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="stephane.html" >stephane</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="stephane.analysis.html" >stephane.analysis</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">stephane.analysis.corr</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Turbotslab.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    </div>
+  </body>
+</html>

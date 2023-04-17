@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>stephane.analysis.cdata &#8212; Turbotslab 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="stephane.analysis.compilation" href="stephane.analysis.compilation.html" />
+    <link rel="prev" title="stephane.analysis.basics" href="stephane.analysis.basics.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="stephane.analysis.compilation.html" title="stephane.analysis.compilation"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="stephane.analysis.basics.html" title="stephane.analysis.basics"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Turbotslab 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="stephane.html" >stephane</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="stephane.analysis.html" accesskey="U">stephane.analysis</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">stephane.analysis.cdata</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-stephane.analysis.cdata">
+<span id="stephane-analysis-cdata"></span><h1>stephane.analysis.cdata<a class="headerlink" href="#module-stephane.analysis.cdata" title="Permalink to this heading">¶</a></h1>
+<p>Created on Thu Jul 16 11:59:31 2015</p>
+<p>&#64;author: stephane</p>
+<p class="rubric">Functions</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">example_1</span></code>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">example_2</span></code>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">examples</span></code>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">fast_neigh</span></code>(data, tup[, d_max, b, rm_center])</p></td>
+<td><p>Return the neighbourhood of a given data point for an arbitrary size numpy array For now, accept only scalar data.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">fast_neighboors</span></code>(u, t[, b, bmin, return_d, ...])</p></td>
+<td><p>Find the neighboors of a given point in 2 or 3 dimensions</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">gaussian_smooth</span></code>(M, field[, sigma])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">local_smooth</span></code>(M, t, Dt[, borne])</p></td>
+<td><p>Replace aberrant values by the mean of their neighboors. Aberrant values are detected with test_neigh function INPUT ----- M : Mdata object     Must contain attributes Ux, Uy and a methode shape() t : int     time index Dt : int     number of frames to process OUTPUT ----- None. Directly modify the M object given in argument.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">nancount</span></code>(data)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">neighboors</span></code>(u, t[, b, bmin, return_d, t_dilate])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_nan_3d</span></code>(ff)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_spurious</span></code>(M[, borne, display])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace_data</span></code>(data, tup_list)</p></td>
+<td><p>Replace a data point by the mean of its neighboors values</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace_nan</span></code>(u, t[, mode, b])</p></td>
+<td><p>replace a NaN value by an average of non nan adjacent values (weighted ??) INPUT ----- u : np array     data to be nan removed t : tuple      tuple of index positions mode : string      'mean' or 'median' OUTPUT ----- u : nan removed np array</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">rm_baddata</span></code>(U[, d_max, b, borne, display])</p></td>
+<td><p>Local test (based on the neighboorhood of each point)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">rm_data</span></code>(M, field)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">rm_nan</span></code>(M, field[, rate])</p></td>
+<td><p>Remove nan values from a given field of M (one of its attribute) INPUT ----- M : Mdata object     dataset field : string     attribute of M containing the data to be processed OUTPUT ----- M : Mdata object     dataset with removes nan values</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">rm_nans</span></code>(U[, d, rate])</p></td>
+<td><p>look for NaN values and replace by an average of adjacent values INPUT ----- U : list of np array OUTPUT ----- U_new : list of np array     nan removed</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">smooth</span></code>(V, Dt)</p></td>
+<td><p>average the data over a window Dt along its last axis</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">smoothn</span></code>(dlist, s)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_neigh</span></code>(data, tup[, d_max, b])</p></td>
+<td><p>Compute the vector averaged of the neighbourhood of data[t], and compare to its value. If it is far from the median value, replace by the mean vector INPUT ----- data : np array     full data set ? or only slice ? -&gt; only slice, ie containing dimensions on which we want to average     last dimension then corresponds to vector (if it is a vector quantity) t : tuple     index of the center point.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">trash</span></code>()</p></td>
+<td><p>delete some aberrant measurements before performing the iterations INPUT ----- U : np array epsilon : float     ?? thresh : float     ?? OUTPUT ----- U : np array</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="stephane.analysis.basics.html"
+                          title="previous chapter">stephane.analysis.basics</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="stephane.analysis.compilation.html"
+                          title="next chapter">stephane.analysis.compilation</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/modules/stephane.analysis.cdata.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="stephane.analysis.compilation.html" title="stephane.analysis.compilation"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="stephane.analysis.basics.html" title="stephane.analysis.basics"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Turbotslab 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="stephane.html" >stephane</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="stephane.analysis.html" >stephane.analysis</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">stephane.analysis.cdata</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Turbotslab.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    </div>
+  </body>
+</html>

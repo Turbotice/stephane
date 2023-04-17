@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>stephane.vortex.core_size &#8212; Turbotslab 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="stephane.vortex.measure" href="stephane.vortex.measure.html" />
+    <link rel="prev" title="stephane.vortex.circulation_core_rad_single_core_stephane" href="stephane.vortex.circulation_core_rad_single_core_stephane.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="stephane.vortex.measure.html" title="stephane.vortex.measure"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="stephane.vortex.circulation_core_rad_single_core_stephane.html" title="stephane.vortex.circulation_core_rad_single_core_stephane"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Turbotslab 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="stephane.html" >stephane</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="stephane.vortex.html" accesskey="U">stephane.vortex</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">stephane.vortex.core_size</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-stephane.vortex.core_size">
+<span id="stephane-vortex-core-size"></span><h1>stephane.vortex.core_size<a class="headerlink" href="#module-stephane.vortex.core_size" title="Permalink to this heading">¶</a></h1>
+<p class="rubric">Functions</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">circ_gaussian</span></code>(a, R)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">circulation_2</span></code>(M, i[, fignum, display])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">compile</span></code>(Mlist[, V, method])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute</span></code>(M[, method, fignum, display])</p></td>
+<td><p>Compute the core size measurement using either the 'vorticity' of the 'circulation' method</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_circulation</span></code>(x, y, Z[, method])</p></td>
+<td><p>Compute circulation from</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_circulation_2</span></code>(M[, fignum, display])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">distance_fit</span></code>(a, fun, R, Z)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_core_circulation</span></code>(M[, fignum, display])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_core_size</span></code>(x, y, Z[, fignum, display])</p></td>
+<td><p>Find the half width of a gaussian bump INPUT ----- x : 2d np array      spatial coordinates (columns) y : 2d np array     spatial coordinates (lines) Z : 2d np array     data to be fitted (typically vorticity field ) fignum : int     figure number for the output. Default 1 display : bool OUTPUT ----- a : float     parameter of the gaussian bump center : 2 elements np array     center coordinates.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_circulation</span></code>(M[, display])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_circulation_1</span></code>(M[, fignum, display])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_circulation_2</span></code>(M[, fignum, display])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_circulation_joseph</span></code>(M[, fignum, display])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_vorticity</span></code>(M[, fignum, display])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">gaussian</span></code>(a, R[, A])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">normalize</span></code>(X, Y, Z[, sign])</p></td>
+<td><p>Center and normalize Z around its maximum value (max of <a href="#id1"><span class="problematic" id="id2">|Z|</span></a>) define on the nodes of grids x and y INPUT ----- X : 2d np array Y : 2d np array Z : 2d np array OUTPUT ----- Xshift : 2d np array     shifted coordinate Yshift : 2d np array     shifted coordinate Znorm : 2d np array     normalized field Z center : list with 2 elements     coordinates of the center in the grid (X,Y) factor : normalization factor applied to Z     can be used to recover the initial amplitude of Z (after fitting operations)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">save_graphes</span></code>(M, figs[, method])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">space_axis_vorticity</span></code>(M)</p></td>
+<td><p>Return axis of a vorticity field</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="stephane.vortex.circulation_core_rad_single_core_stephane.html"
+                          title="previous chapter">stephane.vortex.circulation_core_rad_single_core_stephane</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="stephane.vortex.measure.html"
+                          title="next chapter">stephane.vortex.measure</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/modules/stephane.vortex.core_size.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="stephane.vortex.measure.html" title="stephane.vortex.measure"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="stephane.vortex.circulation_core_rad_single_core_stephane.html" title="stephane.vortex.circulation_core_rad_single_core_stephane"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Turbotslab 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="stephane.html" >stephane</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="stephane.vortex.html" >stephane.vortex</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">stephane.vortex.core_size</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Turbotslab.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    </div>
+  </body>
+</html>
