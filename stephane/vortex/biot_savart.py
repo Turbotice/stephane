@@ -1,10 +1,6 @@
-
-
 import numpy as np
-
 #import stephane.display.vfield as vfield
 import stephane.display.graphes as graphes
-
 import time
 import stephane.jhtd.strain_tensor as strain_tensor
 import stephane.tools.Smath as Smath

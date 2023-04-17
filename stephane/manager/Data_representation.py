@@ -16,7 +16,7 @@ from matplotlib.collections import PatchCollection
 import matplotlib.pyplot as plt
 
 import stephane.display.graphes as graphes
-import stephane.mdata.Sdata_manip as Sdata_manip
+#import stephane.mdata.Sdata_manip as Sdata_manip
 
 #number of figures : one for PIV, one for Bubbles
 # one with box and one without box ?

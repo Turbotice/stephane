@@ -47,7 +47,7 @@ def add_parameters(M):
     if Dict['v']==-1:
         v = browse.get_number(cinefile,'mm_v','mm')
     Dict['fps'] = browse.get_number(cinefile,'_fps','_')
-    Dict['fx'] = 
+    Dict['fx'] = 1##browse.get_number(cinefile,'_','_')
 
     
     

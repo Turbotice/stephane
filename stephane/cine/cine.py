@@ -270,7 +270,7 @@ class Cine(object):
             d_name, d_type = TAGGED_FIELDS[b_type]
 
         except KeyError:
-            #            print 'unknown type, find an updated version of file spec', b_type
+            #            print('unknown type, find an updated version of file spec', b_type
             self.file_lock.release()
             return block_size, more_tags
 

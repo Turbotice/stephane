@@ -17,7 +17,7 @@ import stephane.tools.browse as browse
 import os.path
 
 import stephane.analysis.Fourier as Fourier
-import stephane.manager.access as access
+#import stephane.manager.access as access
 #Codes for plotting data of grid turbulence experiments.
 #include plots of box, grid, multiplot
 

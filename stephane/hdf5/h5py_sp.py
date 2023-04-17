@@ -25,7 +25,7 @@ def write(filename):
 
 #Reading data
 
-def read(filename)
+def read(filename):
     hf1 = h5py.File(fname, "r")
     for name in hf1:
         dset = hf1[name]

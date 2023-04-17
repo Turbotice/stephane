@@ -41,10 +41,6 @@ import stephane.manager.file_architecture as file_architecture
 import stephane.tools.rw_data as rw_data
 import stephane.tools.browse as browse
 
-import stephane.mdata.Sdata_manip as Sdata_manip
-
-
-
 key_dict=['date','index','H0','fps','stroke','Xplane','Zplane','typeview','typeplane','dataType','fileCine','processed','type','who']
 default={'dataType':'2D_PIVmovie','processed':'No'}
 #default={'dataType':'2D_Bubblemovie','processed':'No'}

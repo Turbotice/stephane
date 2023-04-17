@@ -2,21 +2,21 @@ import numpy as np
 import matplotlib.pyplot as plt
 import datetime
 import os
-import plotmovie as pm
 import math
 import matplotlib
 import argparse
 import sys
-import cPickle as pickle
-import motor_track_functions as mtf
 import os.path
 from matplotlib.patches import Circle, Wedge, Polygon
 from matplotlib.collections import PatchCollection
 import scipy
 from mpl_toolkits.mplot3d import Axes3D
 from matplotlib import cm
-import jiayi.hdf5.h5py_convert as h5py
-    
+
+#import cPickle as pickle
+#import motor_track_functions as mtf
+#import jiayi.hdf5.h5py_convert as h5py
+#import plotmovie as pm
 
 def laplacian(u,j,dx):
     n=len(u[:,j])

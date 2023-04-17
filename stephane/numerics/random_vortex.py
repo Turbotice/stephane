@@ -1,13 +1,13 @@
 
 
 import numpy as np
-import tangle
 import os.path
 
 import stephane.display.graphes as graphes
 import stephane.display.panel as panel
 
 import stephane.vortex.biot_savart as biot
+#import tangle
 
 
 def noise(base,sigma,n,T=0,N=None,remove_mean=True,recompute=True,An=None):

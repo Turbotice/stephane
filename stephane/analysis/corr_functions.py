@@ -3,13 +3,10 @@
 import numpy as np
 import math
 
-
-import stephane.manager.access as access
-
 import stephane.analysis.statP as statP
 import stephane.analysis.cdata as cdata
 
-import stephane.manager.access as access
+#import stephane.manager.access as access
 
 
 

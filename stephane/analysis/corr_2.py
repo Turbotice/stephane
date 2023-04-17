@@ -7,7 +7,7 @@ import numpy as np
 import stephane.analysis.corr as corr
 import stephane.analysis.statP as statP
 
-import stephane.manager.access as access
+#import stephane.manager.access as access
 
 
 

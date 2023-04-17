@@ -1,7 +1,7 @@
 
 
 import numpy as np
-import tangle
+#import tangle #missing package !!! Ask D. Kleckner
 import os.path
 
 import stephane.display.graphes as graphes

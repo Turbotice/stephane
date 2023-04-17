@@ -2,7 +2,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import datetime
 import os
+
 import math
+
 import argparse
 import sys
 
@@ -16,8 +18,7 @@ import stephane.hdf5.h5py_s as h5py
 import stephane.display.graphes as graphes
     
 import time
-
-import stephane.design_vortices.random as rand_tangle
+#import stephane.design_vortices.random as rand_tangle
 
 ##################### Initialization ##################
         

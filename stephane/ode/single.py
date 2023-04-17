@@ -1,6 +1,6 @@
 import numpy as np
 import os
-import transport
+import stephane.ode.transport as transport
 import pickle
 
 def compute():
@@ -70,5 +70,6 @@ def main():
     print(str(np.round(t2-t1,decimals=1))+' s')
     print('done')
 
-main()
+if __name__=='__main__':  
+    main()
     

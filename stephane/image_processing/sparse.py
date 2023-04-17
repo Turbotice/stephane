@@ -348,7 +348,7 @@ def c_unpack(s, array_size, dt):
     c_vars = ['input_buffer', 'input_buffer_len', 'x', 'output_buffer_size']
 
     return_val = weave.inline(code, c_vars)
-    if return_val: print "WARNING: C unpack returned %d, data may be corrupted!" % return_val
+    if return_val: print("WARNING: C unpack returned %d, data may be corrupted!" % return_val)
 
 
     return x
@@ -363,7 +363,7 @@ def sparse_decode(s, shape, dtype):
         try:
             a = c_unpack(s, shape, dtype)
         except:
-            print "WARNING: WEAVE INSTALLED, BUT CAN'T COMPILE CODE!"
+            print("WARNING: WEAVE INSTALLED, BUT CAN'T COMPILE CODE!")
             USE_C_UNPACK = False
             a = fromstring(unpack_re.sub(unpack_func, s), dtype=dtype)
 
@@ -443,7 +443,7 @@ if __name__ == '__main__':
         max_frame = (len(source) - args.skip) // frames_per_volume
         saved_frames = eval_slice(args.range, max_frame)
     
-        print '%30s -> %-30s (%d frames)...' % (input, output, len(saved_frames))
+        print('%30s -> %-30s (%d frames)...' % (input, output, len(saved_frames)))
         sys.stdout.flush()
     
         #continue
@@ -469,7 +469,7 @@ if __name__ == '__main__':
         valmap = clip(valmap * 255, 0, 255).astype('u1')
     
         for frame_num in saved_frames:
-            print frame_num,
+            print(frame_num)
             sys.stdout.flush()
             #frame = array([source[i] for i in (frame_offsets + frame_num * frames_per_volume + args.skip)], dtype='u4')
             #frame = ((clip(frame, args.min_val, args.max_val) - args.min_val)) * 255 // (args.max_val - args.min_val)            
@@ -481,7 +481,7 @@ if __name__ == '__main__':
             output.append_array(valmap[frame])
             
     
-        print '-> done in %.1fs' % (time.time() - start)
+        print('-> done in %.1fs' % (time.time() - start))
     
 #    print frame.shape
     
@@ -495,7 +495,7 @@ if __name__ == '__main__':
         test.close()
         
         test = TextHeaderedBinary('test.thb', 'r')
-        print test.header
-        print test.read_block(0)
-        print test.read_block(1)
-        print test.read_block(2)
+        print(test.header)
+        print(test.read_block(0))
+        print(test.read_block(1))
+        print(test.read_block(2))

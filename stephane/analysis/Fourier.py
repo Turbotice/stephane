@@ -15,7 +15,7 @@ import stephane.display.graphes as graphes
 import stephane.analysis.basics as basics
 import stephane.analysis.vgradient as vgradient
 
-import stephane.manager.access as access
+#import stephane.manager.access as access
 
 def movie_spectrum(M,field,alpha=[-5./3],Dt=10,fignum=1,start=0,stop=0):
     #switch_field(field)

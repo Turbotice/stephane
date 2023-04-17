@@ -4,7 +4,7 @@ Created on Tue Mar 17 15:38:03 2015
 
 @author: stephane
 """
-import stephane.Image_processing.cine as cine
+#import stephane.image_processing.cine as cine
 import numpy as np
 import pylab as plt
 import os

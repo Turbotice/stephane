@@ -12,10 +12,10 @@ From a set of measurement (?), compute the following quantities :
 """
 
 
-import stephane.mdata.Sdata_manip as Sdata_manip 
 import stephane.analysis.vgradient as vgradient
-
 import stephane.display.graphes as graphes
+
+#import stephane.mdata.Sdata_manip as Sdata_manip 
 
 date = '2016_11_12'
 indices = range(60)
@@ -70,6 +70,6 @@ def main(date,indices):
         if M is not None:
             M.write(data=True,overwrite=True)
     
-    
 
-main(date,indices)
+if __name__=='__main__':
+    main(date,indices)

@@ -1,12 +1,12 @@
 #!/usr/bin/env python
-from numpy import *
+import numpy as np
 import time
 
 #Processing the data in chunks keeps it in the L2 catch of the processor, increasing speed for large arrays by ~50%
 CHUNK_SIZE = 6 * 10**5 #Should be divisible by 3, 4 and 5!  This seems to be near-optimal.
 
 def ten2sixteen(a):
-    b = zeros(a.size//5*4, dtype='u2')
+    b = np.zeros(a.size//5*4, dtype='u2')
     
     for j in range(0, len(a), CHUNK_SIZE):
         (a0, a1, a2, a3, a4) = [a[j+i:j+CHUNK_SIZE:5].astype('u2') for i in range(5)]
@@ -22,7 +22,7 @@ def ten2sixteen(a):
     return b
 
 def sixteen2ten(b):
-    a = zeros(b.size//4*5, dtype='u1')
+    a = np.zeros(b.size//4*5, dtype='u1')
     
     for j in range(0, len(a), CHUNK_SIZE):
         (b0, b1, b2, b3) = [b[j+i:j+CHUNK_SIZE:4] for i in range(4)]
@@ -39,7 +39,7 @@ def sixteen2ten(b):
     return a
 
 def twelve2sixteen(a):
-    b = zeros(a.size//3*2, dtype='u2')
+    b = np.zeros(a.size//3*2, dtype='u2')
     
     for j in range(0, len(a), CHUNK_SIZE):
         (a0, a1, a2) = [a[j+i:j+CHUNK_SIZE:3].astype('u2') for i in range(3)]
@@ -53,7 +53,7 @@ def twelve2sixteen(a):
     return b
 
 def sixteen2twelve(b):
-    a = zeros(b.size//2*3, dtype='u1')
+    a = np.zeros(b.size//2*3, dtype='u1')
     
     for j in range(0, len(a), CHUNK_SIZE):
         (b0, b1) = [b[j+i:j+CHUNK_SIZE:2] for i in range(2)]
@@ -71,7 +71,7 @@ if __name__ == '__main__':
     #test = arange(0, 2**10, 2**6, dtype='u2')
     N = CHUNK_SIZE * 10
     
-    test = random.randint(0, 2**10, N)
+    test = np.random.randint(0, 2**10, N)
 
     start = time.time()
     tb = sixteen2ten(test)
@@ -87,7 +87,7 @@ if __name__ == '__main__':
   #  print '10 bit Match: %s' % (test == test2).all()
 
 
-    test = random.randint(0, 2**12, N)
+    test = np.random.randint(0, 2**12, N)
 
     start = time.time()
     tb = sixteen2twelve(test)

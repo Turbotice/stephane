@@ -11,7 +11,7 @@ import stephane.analysis.cdata as cdata
 import stephane.analysis.vgradient as vgradient
 import stephane.jhtd.strain_tensor as strain_tensor
 
-import stephane.manager.access as access
+#import stephane.manager.access as access
 
 import stephane.tools.browse as browse
 import stephane.tools.Smath as Smath
@@ -23,7 +23,7 @@ from scipy import optimize as opt
 import random
 import scipy.io as sio
 
-import stephane.vortex.circulation_core_rad_single_core_stephane as joseph
+#import stephane.vortex.circulation_core_rad_single_core_stephane as joseph
 
 def compute(M,method='vorticity',fignum=1,display=True):
     """
@@ -275,6 +275,9 @@ def compute_circulation(x,y,Z,method='disk'):
     return R_sample,Gamma,center,factor
 
 def space_axis_vorticity(M):
+    """
+    Return axis of a vorticity field
+    """
     Z = getattr(M,'omega')
     dimensions = Z.shape
     X = M.x

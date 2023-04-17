@@ -17,7 +17,7 @@ import os
 from matplotlib.colors import Normalize
 from scipy import ndimage, interpolate, signal
 from scipy import optimize as opt
-import cPickle
+#import cPickle
 import random
 import scipy.io as sio
 
@@ -158,7 +158,7 @@ def partial_deriv(plane,direction,dx):
             result[i,plane.shape[1]-1] = (plane[i,plane.shape[1]-2] - plane[i,plane.shape[1]-1]) / dx # right edge case
         return -1*result # -1 because I messed up...
     else:
-        print 'Direction not specified or was invalid! please try again using x or y'
+        print('Direction not specified or was invalid! please try again using x or y')
 
 def interp_flow_component(x,y,u,piv_roi):
     """
@@ -223,7 +223,8 @@ def ellip_gauss_func(x,y,cx,cy,sx=1.,sy=1.):
     z = (x-cx)**2/sx**2 + (y-cy)**2/sy**2
     return np.exp(-z)
 
-def gauss_func_cfit((x,y),cx,cy,sx=1.,sy=1.,a=1.):
+def gauss_func_cfit(tup,cx,cy,sx=1.,sy=1.,a=1.):
+    x,y = tup
     """ read somewhere that suggested that we need the first thing as a tuple for curve fit """
     z = (x-cx)**2/sx**2 + (y-cy)**2/sy**2
     return np.exp(-z)
@@ -322,9 +323,9 @@ def main():
         popt, pcov = opt.curve_fit(circ_by_rad,real_radii,real_gammas,p0=(real_gammas.max(),4.)) # fitting to the correct distribution, give rough first est of core size of 4 mm
         sigma = np.abs(popt[1]) # should be core size in mm
         rad_est.append(sigma) # just need an estimate
-        print 'done with estimate %d'%frame_no
+        print('done with estimate %d'%frame_no)
     med_rad_est = np.median(rad_est)*ppmm # estimate for mean radius from the 3 random frames
-    print 'estimated radius: %.2f mm'%(med_rad_est/ppmm)
+    print('estimated radius: %.2f mm'%(med_rad_est/ppmm))
 
     # need to make the thing to convolve
     # making the thing to convolve
@@ -403,7 +404,7 @@ def main():
         i_ux = interp_flow_component(x_array,y_array,best_ux_array,piv_roi) # returning a grid interpolated to every 1 (real) pixel instead of every ?? which is what we get from PIV
         i_uy = interp_flow_component(x_array,y_array,best_uy_array,piv_roi)
         phis = np.arange(0,2*np.pi,2*np.pi/float(num_pts)) # for circles
-        print 'frame %d'%frame
+        print('frame %d'%frame)
 
         pos_dir = '%s_figs/'%position
         gammas = []
@@ -454,7 +455,7 @@ def main():
         plt.savefig(os.path.join(result_dir,pos_dir,'circulation_v_rad_frame_%d.png'%frame))
         plt.close()
         sigma = np.abs(popt[1]) # should be core size in mm
-        print 'measured core radius (%s): %.2f'%(position,sigma)
+        print('measured core radius (%s): %.2f'%(position,sigma))
 
         # plotting vorticity with an overlay of the core
         norm = MidpointNormalize(midpoint=0) # for making sure white is really 0 in the color map

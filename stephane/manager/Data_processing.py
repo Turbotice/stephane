@@ -26,14 +26,14 @@ import os.path
 import glob
 
 #script_dir = os.path.dirname(os.path.realpath(__file__))
-parser = argparse.ArgumentParser(description="Process PIV data date by date")
-parser.add_argument('-d',dest='date',default='1987_03_19',type=str,help='date to be processed. Python will look for it in the folders specified in file_architecture.py')
-parser.add_argument('-f',dest='folder',default=None,type=str,help='base folder to be processed. Python will look for cine files inside this specified folder')
-parser.add_argument('-s',dest='start',default=None,type=int, help='start processing index of the cinefile List')
-parser.add_argument('-e',dest='end',default=None,type=int, help='end processing index of the cinefile List')
-parser.add_argument('-n',dest='n',default=10,type=int, help='Number of images for the ref movie (optionnal)')
-parser.add_argument('-step',dest='step',default=2,type=int, help='Under sampling of the data. Default value is 2')
-args = parser.parse_args()
+#parser = argparse.ArgumentParser(description="Process PIV data date by date")
+#parser.add_argument('-d',dest='date',default='1987_03_19',type=str,help='date to be processed. Python will look for it in the folders specified in file_architecture.py')
+#parser.add_argument('-f',dest='folder',default=None,type=str,help='base folder to be processed. Python will look for cine files inside this specified folder')
+#parser.add_argument('-s',dest='start',default=None,type=int, help='start processing index of the cinefile List')
+#parser.add_argument('-e',dest='end',default=None,type=int, help='end processing index of the cinefile List')
+#parser.add_argument('-n',dest='n',default=10,type=int, help='Number of images for the ref movie (optionnal)')
+#parser.add_argument('-step',dest='step',default=2,type=int, help='Under sampling of the data. Default value is 2')
+#args = parser.parse_args()
 
 def main(date):
     """

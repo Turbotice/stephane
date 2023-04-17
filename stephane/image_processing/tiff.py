@@ -51,8 +51,9 @@ TIFF_TAGS = { #Baseline TIFF tags
 }
 
 TIFF_TAGS_I = {}
-for k, (n, t) in TIFF_TAGS.iteritems():
-    TIFF_TAGS_I[n] = (k, t)
+for key in TIFF_TAGS_I.keys():
+    (n, t) = TIFF_TAGS_I[key]
+    TIFF_TAGS_I[key] = (key, t)
 
 DEFAULT_TAGS = {
     'Compression':1,

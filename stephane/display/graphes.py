@@ -1,13 +1,13 @@
 
 
-import matplotlib.pyplot as plt
+import matplotlib as plt#matplotlib.pyplot as plt
 import numpy as np
 import os
 import pickle
 
 from math import *
 #import stephane.tools.fitting as fitting
-import stephane.hdf5.h5py_s as h5py_s
+#import stephane.hdf5.h5py_s as h5py_s
 
 def plot(fun,x,y,fignum=1,label='-',subplot=None,**kwargs):
     """

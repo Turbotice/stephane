@@ -1,17 +1,17 @@
 #!/usr/bin/env python
 
-from numpy import *
+import numpy as np
 import os, sys
 import argparse
 import time
 import matplotlib.pyplot as plt
 import glob
 
-import image#, ImageDraw, ImageFont
+#import image#, ImageDraw, ImageFont
 
-import stephane.Image_processing.cine as cine
-import stephane.Image_processing.mjpeg as mjpeg
-import stephane.Image_processing.tiff as tiff
+import stephane.image_processing.cine as cine
+import stephane.image_processing.mjpeg as mjpeg
+import stephane.image_processing.tiff as tiff
 
 #import stephane.Image_processing as Im_proc
 
@@ -89,8 +89,8 @@ class StatusPrinter(object):
         
         msg = ('%%-%ds' % self.max_len) % msg
         
-        if final: print '\r' + msg
-        else: print '\r' + msg,
+        if final: print('\r' + msg)
+        else:print('\r' + msg)
             
         sys.stdout.flush()        
 
@@ -157,13 +157,13 @@ def single_avi(args):
                 #   raise ValueError("Couldn't convert '[%s' to slice notation" % s)
 
             else:
-                print "Warning, found '[' in input, but it didn't end with ']', so I'll assume you didn't mean to give a frame range."
+                print("Warning, found '[' in input, but it didn't end with ']', so I'll assume you didn't mean to give a frame range.")
     
         base, ext = os.path.splitext(fn)
         ext = ext.lower()
     
         if not os.path.exists(fn):
-            print "File %s not found, ignoring." % fn
+            print("File %s not found, ignoring." % fn)
             continue
     
         output = args.output
@@ -290,13 +290,13 @@ def multiple_avi(args):
                 raise ValueError("Couldn't convert '[%s' to slice notation" % s)
 
         else:
-            print "Warning, found '[' in input, but it didn't end with ']', so I'll assume you didn't mean to give a frame range."
+            print("Warning, found '[' in input, but it didn't end with ']', so I'll assume you didn't mean to give a frame range.")
     
     base, ext = os.path.splitext(fn)
     ext = ext.lower()
     
     if not os.path.exists(fn):
-        print "File %s not found, ignoring." % fn
+        print("File %s not found, ignoring." % fn)
       #  continue
     
     output = args.output

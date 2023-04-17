@@ -17,7 +17,7 @@ from numpy import array, frombuffer
 #import Image
 from threading import Lock
 #import multiprocessing as M
-import packed
+import stephane.image_processing.packed
 
 import datetime
 import hashlib

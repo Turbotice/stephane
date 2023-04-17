@@ -8,22 +8,22 @@ Mdata : for each Dir of measurements, after PIV processing for instance
 """
 
 import matplotlib
-matplotlib.use('Agg')
+#matplotlib.use('Agg')
 
-import stephane.mdata.Sdata_manip as Sdata_manip
-import stephane.mdata.M_manip as M_manip
+#import stephane.mdata.Sdata_manip as Sdata_manip
+#import stephane.mdata.M_manip as M_manip
 import stephane.tools.browse as browse
 
 import argparse
 import os.path
 
 #script_dir = os.path.dirname(os.path.realpath(__file__))
-parser = argparse.ArgumentParser(description="Create Sdata and Mdata objects associated to cine files and PIV measurements")
-parser.add_argument('-d',dest='date',default='1987_03_19',type=str,help='date to be processed. Python will look for it in all the folders specified in file_architecture.py')
-parser.add_argument('-f',dest='folder',default=None,type=str,help='base folder to be processed. Python will look for cine files inside this specified folder')
-parser.add_argument('-s',dest='start',default=None,type=int, help='start processing index of the cinefile List')
-parser.add_argument('-e',dest='end',default=None,type=int, help='end processing index of the cinefile List')
-args = parser.parse_args()
+#parser = argparse.ArgumentParser(description="Create Sdata and Mdata objects associated to cine files and PIV measurements")
+#parser.add_argument('-d',dest='date',default='1987_03_19',type=str,help='date to be processed. Python will look for it in all the folders specified in file_architecture.py')
+#parser.add_argument('-f',dest='folder',default=None,type=str,help='base folder to be processed. Python will look for cine files inside this specified folder')
+#parser.add_argument('-s',dest='start',default=None,type=int, help='start processing index of the cinefile List')
+#parser.add_argument('-e',dest='end',default=None,type=int, help='end processing index of the cinefile List')
+#args = parser.parse_args()
 
 
 #import argparse

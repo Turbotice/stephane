@@ -1,6 +1,6 @@
 
 
-from ilpm import path
+#from ilpm import path
 import numpy as np
 import stephane.vortex.biot_savart as biot
 import stephane.jhtd.geom as geom

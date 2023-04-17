@@ -13,7 +13,7 @@ import numpy as np
 
 import os.path
 
-import stephane.manager.file_architecture as file_architecture
+#import stephane.manager.file_architecture as file_architecture
 
 def get_attributes(obj):
     dict_attr = {}

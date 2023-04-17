@@ -3,7 +3,7 @@
 import stephane.analysis.corr as corr
 import numpy as np
 import stephane.tools.Smath as Smath
-import stephane.manager.access as access
+#import stephane.manager.access as access
 
 import stephane.display.graphes as graphes
 

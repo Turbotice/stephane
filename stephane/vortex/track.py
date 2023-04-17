@@ -4,7 +4,7 @@ import scipy.ndimage.filters as filters
 import scipy.optimize as opt
 import scipy.interpolate as interpolate
 
-import stephane.manager.access as access
+#import stephane.manager.access as access
 
 import stephane.vortex.core_size as core
 import stephane.analysis.vgradient as vgradient

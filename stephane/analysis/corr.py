@@ -25,7 +25,7 @@ import stephane.analysis.Fourier as Fourier
 import stephane.analysis.statP as statP
 #import fit
 
-import stephane.manager.access as access
+#import stephane.manager.access as access
     
 def time_correlation(Mlist,indices=None,display=False):
     """

@@ -10,7 +10,7 @@ import numpy as np
 import stephane.analysis.basics as basics
 import stephane.analysis.vgradient as vgradient
 
-import stephane.pprocess.check_piv as check
+#import stephane.pprocess.check_piv as check
 
 import scipy.interpolate as interp
 

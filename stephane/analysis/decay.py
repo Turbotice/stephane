@@ -8,7 +8,7 @@ Created on Mon Jul 20 11:50:34 2015
 import numpy as np
 import stephane.display.graphes as graphes
 import stephane.analysis.cdata as cdata
-import stephane.manager.access as access
+#import stephane.manager.access as access
 #import time_step_sample
 
 def decay(M,field,M_moy=None,display=False,label='',fignum=1,compute=True,fluctuations=False,log=True):

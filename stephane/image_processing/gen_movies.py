@@ -5,7 +5,7 @@ import subprocess as sub
 import glob
 import os
 import os.path
-import stephane.Image_processing.cine2avi as cine2avi
+import stephane.image_processing.cine2avi as cine2avi
 
 def compress_movie(filename,rate = 4096):
     """

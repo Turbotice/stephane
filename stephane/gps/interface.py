@@ -8,13 +8,14 @@ import stephane.display.graphes as graphes
 
 import garmin
 import fitdecode
-import tilemapbase
 
 # Import the required library
 from geopy.geocoders import Nominatim
 
 
 def tmp_connect():
+    import tilemapbase
+
     tilemapbase.start_logging()
     tilemapbase.init(create=True)
     # Use open street map

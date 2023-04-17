@@ -14,7 +14,7 @@ except:
     import Image
 import numpy as N
 import struct
-import StringIO
+from io import StringIO
 import os, sys
 
 #from decode_test import hex, dwords
