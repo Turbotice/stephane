@@ -86,7 +86,7 @@ def decode(filename):
     return d
 
 def convert_traj(d,tmin=None,tmax=None):
-        """
+    """
     Convert trajectory from
     INPUT 
     ----- 

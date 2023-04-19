@@ -15,7 +15,7 @@ import gpxpy
 from geopy.geocoders import Nominatim
 
 def tmp_connect():
-        """
+    """
     Connect to tilemapbase. Beware ! tilemapbase unstable
     INPUT 
     ----- 
@@ -56,6 +56,8 @@ def extent(BBox):
     """
     #to be revised, weird projection system
     """
+    import tilemapbase
+
     ext = tilemapbase.Extent.from_lonlat(BBox[0],BBox[1],BBox[2],BBox[3])
     ext = ext.to_aspect(1.0)
     return ext
@@ -69,6 +71,7 @@ def display_traj(filename,Long,Lat,save=True):
     return ax,figs
 
 def display_map(ext,t,title='',ax=None,width=600):
+    import tilemapbase
     plotter = tilemapbase.Plotter(ext, t, width=width)
     plotter.plot(ax, t)
 
