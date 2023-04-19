@@ -61,33 +61,24 @@ def get_files(base,date,ext=None,prefix=''):
     return filelist    
 
 def find_path(base):
-	print('OS type : '+str(osname))
+    print('OS type : '+str(osname))
 
-	if 'Windows' in ostype:    
-		serveurfolder = 'W:/' #fucking windows OS : beware of the mounting disk you used
-
-	if 'Linux' in ostype:
-		if 'thiou' in osname:
-			serveurfolder = '/volume3/labshared2/' #praise UNIX system
-		elif 'adour' in osname:
-			serveurfolder = '/media/thiou/labshared2/'#praise UNIX system  #with root acces
-			serveurfolder = '/media/turbots/DATA/thiou/labshared2/'#praise UNIX system #without root access (better)
-			
-	if 'Darwin' in ostype:# or 'laita' in osname:    
-		serveurfolder = '/Volumes/labshared2/' #praise UNIX system
+    if 'Windows' in ostype:    
+        serveurfolder = 'W:/'+base #fucking windows OS : beware of the mounting disk you used
+    
+    if 'Linux' in ostype and 'thiou' in osname:
+        serveurfolder = '/volume3/labshared2/'+base #praise UNIX system
+    
+    if 'Darwin' in ostype:# or 'laita' in osname:    
+        serveurfolder = '/Volumes/labshared2/'+base #praise UNIX system
         
-	if not os.path.exists(serveurfolder):
-		print('Connexion to thiou failed')
-        
-	serveurfolder = serveurfolder + base
-	if not os.path.exists(serveurfolder):
-		print('folder not found')
-        
-	return serveurfolder
+    return serveurfolder
 
 def get_dict():
     pass
 
+def test():
+    pass
 
 if __name__== '__main__':
     exemples()
