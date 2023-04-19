@@ -61,18 +61,20 @@ def get_files(base,date,ext=None,prefix=''):
     return filelist    
 
 def find_path(base):
-    print('OS type : '+str(osname))
+	print('OS type : '+str(osname))
 
-    if 'Windows' in ostype:    
-        serveurfolder = 'W:/'+base #fucking windows OS : beware of the mounting disk you used
+	if 'Windows' in ostype:    
+		serveurfolder = 'W:/'+base #fucking windows OS : beware of the mounting disk you used
     
-    if 'Linux' in ostype and 'thiou' in osname:
-        serveurfolder = '/volume3/labshared2/'+base #praise UNIX system
-    
-    if 'Darwin' in ostype:# or 'laita' in osname:    
-        serveurfolder = '/Volumes/labshared2/'+base #praise UNIX system
-        
-    return serveurfolder
+	if 'Linux' in ostype:
+		if 'thiou' in osname:
+			serveurfolder = '/volume3/labshared2/'+base #praise UNIX system    		
+		else:
+			serveurfolder = '/media/turbots/DATA/thiou/labshared2/'+base #praise UNIX system
+	if 'Darwin' in ostype:# or 'laita' in osname:    
+		serveurfolder = '/Volumes/labshared2/'+base #praise UNIX system        
+
+	return serveurfolder
 
 def get_dict():
     pass
