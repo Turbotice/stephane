@@ -15,6 +15,15 @@ import gpxpy
 from geopy.geocoders import Nominatim
 
 def tmp_connect():
+        """
+    Connect to tilemapbase. Beware ! tilemapbase unstable
+    INPUT 
+    ----- 
+    None
+    OUTPUT
+    -----
+    t : tilemapbase object
+    """
     import tilemapbase
 
     tilemapbase.start_logging()
@@ -24,6 +33,16 @@ def tmp_connect():
     return t
 
 def project(Long,Lat):
+    """
+    Naive local projection of Long & Lat coordinates on a plane 
+    INPUT 
+    ----- 
+    Long : list or np array
+    Lat : list or np array
+    OUTPUT
+    -----
+    (x,y) : np arrays
+    """
     Long = np.asarray(Long)
     Lat = np.asarray(Lat)
     
@@ -34,7 +53,9 @@ def project(Long,Lat):
     return (xtile, ytile)
 
 def extent(BBox):
+    """
     #to be revised, weird projection system
+    """
     ext = tilemapbase.Extent.from_lonlat(BBox[0],BBox[1],BBox[2],BBox[3])
     ext = ext.to_aspect(1.0)
     return ext
@@ -150,7 +171,9 @@ def map_traj(Long,Lat,save=False,scale=1.2,title=''):
 
 
 def box_data(Longs,Lats,scale=1.2,width=0.02,square=True):
-    #return a bounding box scaled 
+    """
+    return a bounding box scaled around Longs et Lats datapoint
+    """
     X,Y = Longs,Lats
 
     Wlong = (np.max(X)-np.min(X))*scale
@@ -171,6 +194,10 @@ def box_data(Longs,Lats,scale=1.2,width=0.02,square=True):
     return BBox
 
 def boxes(name):
+    """"
+    Return a dictionnary of typical boxes coordinates (for scaled display maps)
+    Feel free to add standard boxes here
+    """
     d={}
     d['haha'] = [-68.8311,-68.7995,48.3389,48.3551]
     d['bic'] = [-68.8681,-68.7995,48.3181,48.3551]
@@ -179,6 +206,9 @@ def boxes(name):
     return d[name]
 
 def check_box(Long,Lat,BBox):
+    """
+    check box dimensions. Return a boolean value
+    """
 #    BBox = boxes(name)
     bLong = np.logical_and(Long>BBox[0],Long<BBox[1])
     bLat = np.logical_and(Lat>BBox[2],Lat<BBox[3])
@@ -187,7 +217,9 @@ def check_box(Long,Lat,BBox):
     return b
 
 def get_city(Long,Lat):
-# Initialize Nominatim API
+    """
+    Find city name using Nominatim API
+    """
     Longc,Latc = np.mean(Long),np.mean(Lat)
     geolocator = Nominatim(user_agent="MyApp")
     location = geolocator.reverse((Latc,Longc))
