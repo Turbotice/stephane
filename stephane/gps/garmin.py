@@ -15,6 +15,15 @@ serveurfolder = '/Volumes/labshared2/Banquise/Rimouski 2023/Data/GPS/'
 
 
 def download(date=None):
+    """
+    Load .fit and .gpx data from Garmin to destfolder & serveurfolder
+    INPUT 
+    ----- 
+    date : string 
+    OUTPUT
+    -----
+    None
+    """
     if date is not None:
         filelist = glob.glob(folderactivity+'/'+date+'*')
 
@@ -77,6 +86,17 @@ def decode(filename):
     return d
 
 def convert_traj(d,tmin=None,tmax=None):
+        """
+    Convert trajectory from
+    INPUT 
+    ----- 
+    d : dict with key 'r', with fields position_long and position_lat
+    tmin : float
+    tmax : float
+    OUTPUT
+    -----
+    X,Y : np 1d arrays
+    """
     X,Y = [],[]
     for i,a in enumerate(d['r']):
         x = a.get_value('position_long')
@@ -89,6 +109,8 @@ def convert_traj(d,tmin=None,tmax=None):
                     continue
             X.append(x/2**32*360)
             Y.append(y/2**32*360)#2^32/360
+    X = np.asarray(X)
+    Y = np.asarray(Y)
     return X,Y
     #plt.plot(X,Y,'b.')
 
