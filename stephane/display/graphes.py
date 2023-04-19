@@ -36,16 +36,6 @@ def graph(x,y,fignum=1,label='-',subplot=None,**kwargs):
         
     plot(plt.plot,xp,yp,fignum=fignum,label=label,subplot=subplot,**kwargs)
     
-    
-def graphloglog(*args,**kwargs):
-    plot(plt.loglog,*args,**kwargs)
-
-def semilogx(*args,**kwargs):
-    plot(plt.semilogx,*args,**kwargs)
-
-def semilogy(*args,**kwargs):
-    plot(plt.semilogy,*args,**kwargs)
-    
 def errorbar(x,y,xerr,yerr,fignum=1,label='k^',subplot=None,**kwargs):
     """
     plot a graph using matplotlib.pyplot.errorbar function
