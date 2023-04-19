@@ -77,8 +77,5 @@ def find_path(base):
 def get_dict():
     pass
 
-def test():
-    pass
-
 if __name__== '__main__':
     exemples()
