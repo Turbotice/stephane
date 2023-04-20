@@ -198,6 +198,9 @@ def figure_label(x_legend,y_legend,title,display=True,cplot=False,include_title=
     if display:
         print(current.number,fig[current.number])
     return fig
+
+def test():
+    pass
  
 def remove_special_chars(string,chars_rm=['$','\ ','[',']','^','/',') ','} ',' '],chars_rp=['{','(',',','=','.']):
     """
