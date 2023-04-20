@@ -20,7 +20,7 @@ import stephane.rimouski.gps as gps
 import stephane.rimouski.garmin as garmin
 import stephane.display.graphes as graphes
 
-#Global variables
+#Global variables0
 global osname,ostype
 ostype = platform.platform().split('-')[0]
 osname = socket.gethostname()
