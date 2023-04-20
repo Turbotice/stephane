@@ -9,6 +9,9 @@ from math import *
 #import stephane.tools.fitting as fitting
 #import stephane.hdf5.h5py_s as h5py_s
 
+def test():
+    pass
+
 def plot(fun,x,y,fignum=1,label='-',subplot=None,**kwargs):
     """
     plot a graph using the function fun
