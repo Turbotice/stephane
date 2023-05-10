@@ -92,6 +92,9 @@ def compute_fft_t(M,facq=30):
     Z = TF_t*f
     fc = 5#upper bound
     Z = Z[f<fc]
+    print(f.shape)
+    print(Z.shape)
+    
     imax = np.argmax(Z)
     f0  = np.round(f[imax],decimals=2)
     print(f0)
@@ -131,7 +134,7 @@ def display_filtered(M,f0,facq=30):
     
         tit = '$f_0 =$'+str(f)+'Hz'
         axs[i].set_title(tit)
-    tit = '$f_0 =$'+str(f0)+'Hz'
+    tit = '$f_0 =$'+str(freqs[0])+'Hz'
     figs = graphes.legende('X (pix)','Y (pix)',tit,ax=axs[0])
     return figs
 
@@ -147,6 +150,7 @@ def process_movie(imlist,title,savefolder):
     graphes.save_figs(figs,savedir=savefolder)    
     #plt.show()
     
+    print(f0)
     figs = display_filtered(M,f0)
     graphes.save_figs(figs,savedir=savefolder)    
     #plt.show()
@@ -223,7 +227,7 @@ def main(folder=None):
     folders = glob.glob(basefolder+'h*/scene*/zone*')
     print(len(folders))
 
-    for folder in folders:
+    for folder in folders[9:]:
         bfolder = os.path.dirname(folder)
         name = os.path.basename(folder)
         savefolder = bfolder+'/Results_'+name+'/'
