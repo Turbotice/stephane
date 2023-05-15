@@ -52,7 +52,11 @@ def process_movie(imlist,title,savefolder):
     print(len(imlist))
     M = wind.read_images(imlist)
     
-    wind.compute_fft_xt(M)
+    F,Ky,TF_yt_moy = wind.compute_fft_xt(M)
+    figs = wind.display_fft_xt(F,Ky,TF_yt)
+    
+    plt.show()
+    print(toto)
     
     fig,ax = wind.display_image(M[...,0])
     figs = graphes.legende('X (pix)','Y (pix)',title,ax=ax)

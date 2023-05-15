@@ -119,6 +119,9 @@ stephane/web_cv/collab.py
 stephane/web_cv/genhtml.py
 stephane/web_cv/intern.py
 stephane/web_cv/people.py
+stephane/windveil/__init__.py
+stephane/windveil/facades.py
+stephane/windveil/main.py
 stephane_codes.egg-info/PKG-INFO
 stephane_codes.egg-info/SOURCES.txt
 stephane_codes.egg-info/dependency_links.txt
