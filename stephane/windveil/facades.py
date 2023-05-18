@@ -7,6 +7,7 @@ import socket
 import platform
 import mpmath as math
 import cv2
+import csv
 
 #Scipy modules
 import scipy.integrate as inte
@@ -36,6 +37,33 @@ def display_image(im):
     ax.imshow(im)
     return fig,ax
     
+def get_scaleF_fps(filename, h_c, s_c, z_c):
+    rows = []
+    with open(filename) as csvfile:
+        spamreader = csv.reader(csvfile, delimiter=';', quotechar='|')
+        for row in spamreader:
+            rows.append(row)
+    rows = np.asarray(rows)
+    header = rows[0,:]
+    scales = rows[1:,:]
+    print(header,scales)
+    
+    movies = [s.split('_') for s in scales[:,0]]
+    parts = {}
+    for i,movie in enumerate(movies):
+        d={}
+        h=int(movie[0])
+        scene=int(movie[1])
+        zone=int(movie[2])
+        
+        if h == h_c and scene == s_c and zone == z_c:
+            fx = float(scales[i,1].replace(',','.'))
+            ft = 1/float(scales[i,2].replace(',','.'))
+            fps = float(scales[i,2].replace(',','.'))
+            break
+    return fx, ft, fps
+    
+    
 def demod(t,s, fexc):
     """
     Demodulate a signal at a precise frequency, 
@@ -51,7 +79,8 @@ def demod(t,s, fexc):
     c = np.mean(s*np.exp(-1j * 2 * np.pi * t[None,None,:] * fexc),axis=2)
     return c
     
-def compute_fft_t(M,facq=30):
+def compute_fft_t(M, facq):
+
     p = 12
     TF = np.fft.fft(M,axis=2,n=2**p)
     TF = TF[...,:2**(p-1)]
@@ -84,15 +113,15 @@ def display_fft(f,TF_t,f0,Imax,title):
     return figs
     
         
-def time_axis(M,facq=30):
+def time_axis(M,facq):
     dt = 1/facq
     nx,ny,n = M.shape
     T = n*dt
     t = np.arange(0,T,dt)
     return t
     
-def display_filtered(M,f0,facq=30):
-    t = time_axis(M,facq=facq)
+def display_filtered(M,f0,facq):
+    t = time_axis(M,facq)
 
     freqs = [f0/2,3*f0/4,f0,5*f0/4,3*f0/2]
     nc = len(freqs)
@@ -109,20 +138,21 @@ def display_filtered(M,f0,facq=30):
     figs = graphes.legende('X (pix)','Y (pix)',tit,ax=axs[0])
     return figs
 
-def process_movie(imlist,title,savefolder):
+def process_movie(imlist, baseFpsName, h_c, s_c, z_c, title, savefolder):
+    fx, ft, facq = get_scaleF_fps(baseFpsName, h_c, s_c, z_c)
     M = read_images(imlist)
     fig,ax = display_image(M[...,0])
     figs = graphes.legende('X (pix)','Y (pix)',title,ax=ax)
     graphes.save_figs(figs,savedir=savefolder,prefix='im1_')    
     #plt.show()
     
-    f,TF_t,f0,Imax = compute_fft_t(M)
+    f,TF_t,f0,Imax = compute_fft_t(M, facq)
     figs = display_fft(f,TF_t,f0,Imax,title)
     graphes.save_figs(figs,savedir=savefolder)    
     #plt.show()
     
     print(f0)
-    figs = display_filtered(M,f0)
+    figs = display_filtered(M,f0,facq)
     graphes.save_figs(figs,savedir=savefolder)    
     #plt.show()
     
@@ -193,13 +223,24 @@ def compute_rd(M,t):
 #    plt.plot(Kx[i,j],Ky[i,j],'rx')
 #    plt.colorbar(sc)
     
-def compute_fft_xt(M,p0=10):
+def compute_fft_xt(M,fx,facq):
+    p0=10
     nx,ny,nt = M.shape
-    kmax = 1
+    if np.mod(nt,2)==1: #use an even number of images, to pad to the next power of 2 (or to the p0-th power of 2)
+        M=M[...,:-1]
+        nt=nt-1
+    if np.mod(nx,2)==1: #use an even number of images, to pad to the next power of 2 (or to the p0-th power of 2)
+        M=M[:-1,...]
+        nx=nx-1
+    if np.mod(ny,2)==1: #use an even number of images, to pad to the next power of 2 (or to the p0-th power of 2)
+        M=M[:,:-1,:]
+        ny=ny-1  
+    print('nx,ny,nt :',nx,ny,nt)
+    kmax = 2 * np.pi / fx
 
-    px = np.max([np.ceil(np.log2(nx)),p0])
-    py = np.max([np.ceil(np.log2(ny)),p0])
-    pt = np.max([np.ceil(np.log2(nt)),p0])
+    px = int(np.max([np.ceil(np.log2(nx)),p0]))
+    py = int(np.max([np.ceil(np.log2(ny)),p0]))
+    pt = int(np.max([np.ceil(np.log2(nt)),p0]))
 
     bx = int((2**px-nx)/2)
     by = int((2**py-ny)/2)
@@ -214,11 +255,11 @@ def compute_fft_xt(M,p0=10):
         
     Ypad = np.pad(Y, [(0,0),(by,by),(bt,bt)], mode='constant')
 
-    kx = np.linspace(-kmax,kmax,nx)
-    ky = np.linspace(-kmax,kmax,ny)
+    kx = np.linspace(-kmax,kmax,2**px)
+    ky = np.linspace(-kmax,kmax,2**py)
 
-    fmax = 30/2
-    f = np.linspace(0,fmax,2**(p0-1))
+    fmax = facq/2
+    f = np.linspace(-fmax,fmax,2**pt)
     [F,Ky] = np.meshgrid(f,ky)
         
     TF_yt = np.fft.fftshift(np.fft.fft2(Ypad,axes=(1,2)))
@@ -226,10 +267,10 @@ def compute_fft_xt(M,p0=10):
 
     return F,Ky,TF_yt_moy
     
-def display_fft_xt(F,Ky,TF_yt):    
+def display_fft_xt(F,Ky,TF_yt,title):    
 
     fig,ax = plt.subplots(nrows=1,ncols=1,figsize=(10,10))
-    sc = ax.pcolormesh(Ky,-F,np.log10(TF_yt),vmin=4,vmax=6)
+    sc = ax.pcolormesh(Ky,-F,np.log10(TF_yt),vmin=4,vmax=6,shading='gouraud')
     cbar = plt.colorbar(sc)
     cbar.set_label(r'$\hat I$', rotation=0,fontsize=18)
 

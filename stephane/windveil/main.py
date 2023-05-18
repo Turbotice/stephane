@@ -48,45 +48,56 @@ def find_path(base):
 
 	return serveurfolder
 
-def process_movie(imlist,title,savefolder):
+def process_movie(imlist, fx, facq, title, savefolder):
+
     print(len(imlist))
     M = wind.read_images(imlist)
     
-    F,Ky,TF_yt_moy = wind.compute_fft_xt(M)
-    figs = wind.display_fft_xt(F,Ky,TF_yt)
-    
-    plt.show()
-    print(toto)
-    
-    fig,ax = wind.display_image(M[...,0])
-    figs = graphes.legende('X (pix)','Y (pix)',title,ax=ax)
-    graphes.save_figs(figs,savedir=savefolder,prefix='im1_')    
+    F,Ky,TF_yt = wind.compute_fft_xt(M,fx,facq)
+    figs = wind.display_fft_xt(F,Ky,TF_yt,title)
+    graphes.save_figs(figs,savedir=savefolder,prefix='FFT_2d',frmt='png')    
     #plt.show()
     
-    f,TF_t,f0,Imax = wind.compute_fft_t(M)
-    figs = wind.display_fft(f,TF_t,f0,Imax,title)
-    graphes.save_figs(figs,savedir=savefolder)    
+#    fig,ax = wind.display_image(M[...,0])
+#    figs = graphes.legende('X (pix)','Y (pix)',title,ax=ax)
+#    graphes.save_figs(figs,savedir=savefolder,prefix='im1_')    
     #plt.show()
     
-    print(f0)
-    figs = wind.display_filtered(M,f0)
-    graphes.save_figs(figs,savedir=savefolder)    
+#    f,TF_t,f0,Imax = wind.compute_fft_t(M)
+#    figs = wind.display_fft(f,TF_t,f0,Imax,title)
+#    graphes.save_figs(figs,savedir=savefolder)    
     #plt.show()
     
+#    print(f0)
+#    figs = wind.display_filtered(M,f0)
+#    graphes.save_figs(figs,savedir=savefolder)    
+    #plt.show()
+      
     
     
-    #t = time_axis(M)
+  #t = time_axis(M)
     #Res = compute_rd(M,t)
     #figs = display_rd(Res)
     #graphes.save_figs(figs,savedir=savefolder)    
     
 def main(folder=None):
-    base = 'Windveil/NedFacades/recaps/ImgsDewarp/'
-    basefolder = find_path(base)
-    folders = glob.glob(basefolder+'h*/scene*/zone*')
+    base = 'Windveil/NedFacades/recaps/'
+    baseImg = base + 'ImgsDewarp/'
+    basefolder = find_path(baseImg)
+    folders = glob.glob(basefolder+'h1/scene5/zone1')
+    
+    h_c = 1
+    s_c = 5
+    z_c = 1
+    
+    baseFpsfolder = find_path(base);
+    baseFpsName = glob.glob(baseFpsfolder+'*.csv')[0]
+
+    fx, ft, facq = wind.get_scaleF_fps(baseFpsName, h_c, s_c, z_c)
+    
     print(len(folders))
 
-    for folder in folders[30:]:
+    for folder in folders:
         bfolder = os.path.dirname(folder)
         name = os.path.basename(folder)
         savefolder = bfolder+'/Results_'+name+'/'
@@ -97,7 +108,16 @@ def main(folder=None):
         print(folder,len(imlist),savefolder)
         title = str(folder.split('/')[-3:])
         if len(imlist)>0:
-            process_movie(imlist,title,savefolder)
+            process_movie(imlist, fx, facq, title, savefolder)
                 
 if __name__=='__main__':
+
     main()
+    
+    
+    
+    
+    
+    
+    
+    
