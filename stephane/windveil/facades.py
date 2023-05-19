@@ -46,7 +46,7 @@ def get_scaleF_fps(filename, h_c, s_c, z_c):
     rows = np.asarray(rows)
     header = rows[0,:]
     scales = rows[1:,:]
-    print(header,scales)
+    #print(header,scales)
     
     movies = [s.split('_') for s in scales[:,0]]
     parts = {}
@@ -236,7 +236,7 @@ def compute_fft_xt(M,fx,facq):
         M=M[:,:-1,:]
         ny=ny-1  
     print('nx,ny,nt :',nx,ny,nt)
-    kmax = 2 * np.pi / fx
+    kmax = np.pi/fx
 
     px = int(np.max([np.ceil(np.log2(nx)),p0]))
     py = int(np.max([np.ceil(np.log2(ny)),p0]))

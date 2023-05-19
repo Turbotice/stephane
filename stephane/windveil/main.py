@@ -55,7 +55,7 @@ def process_movie(imlist, fx, facq, title, savefolder):
     
     F,Ky,TF_yt = wind.compute_fft_xt(M,fx,facq)
     figs = wind.display_fft_xt(F,Ky,TF_yt,title)
-    graphes.save_figs(figs,savedir=savefolder,prefix='FFT_2d',frmt='png')    
+    graphes.save_figs(figs,savedir=savefolder,prefix='FFT_2d',frmt='png',overwrite=True)    
     #plt.show()
     
 #    fig,ax = wind.display_image(M[...,0])
@@ -72,8 +72,6 @@ def process_movie(imlist, fx, facq, title, savefolder):
 #    figs = wind.display_filtered(M,f0)
 #    graphes.save_figs(figs,savedir=savefolder)    
     #plt.show()
-      
-    
     
   #t = time_axis(M)
     #Res = compute_rd(M,t)
@@ -106,15 +104,21 @@ def main(folder=None):
             
         imlist = glob.glob(folder+'/*.tif')
         print(folder,len(imlist),savefolder)
-        title = str(folder.split('/')[-3:])
+        
+        split = folder.split('/')[-3:]
+        title = str(split)
+        
+        hc = int(split[0][1:])
+        sc = int(split[1][5:])
+        zc = int(split[2][4:])
+        print(hc,sc,zc)
+        fx, ft, facq = wind.get_scaleF_fps(baseFpsName, hc, sc, zc)
+        print(fx,ft,facq)
         if len(imlist)>0:
             process_movie(imlist, fx, facq, title, savefolder)
                 
 if __name__=='__main__':
-
     main()
-    
-    
     
     
     
