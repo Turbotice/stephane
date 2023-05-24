@@ -116,7 +116,7 @@ def env(X,t):
     A = X[0]
     phi = X[1]
     w = X[2]
-    t0 = 16#X[3]
+    t0 = X[3]
 
     n = len(t)
     modul = A*np.max([np.zeros(n),(t0-np.abs(t))/t0],axis=0)
@@ -128,8 +128,7 @@ def error(X,t,C,fun=env):
     return np.sum((C-Cth)**2)
 
 
-def fit(t,C):
-    x0 = [0.2,np.pi,1.5,15]
+def fit(t,C,x0=[0.2,np.pi,1.5,3]):
     xf = scipy.optimize.fmin(error,x0,args=(t,C))
     Cth = env(xf,t)
     return xf,Cth

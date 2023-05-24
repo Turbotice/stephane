@@ -82,7 +82,7 @@ def main(folder=None):
     base = 'Windveil/NedFacades/recaps/'
     baseImg = base + 'ImgsDewarp/'
     basefolder = find_path(baseImg)
-    folders = glob.glob(basefolder+'h1/scene5/zone1')
+    folders = glob.glob(basefolder+'h*/scene*/zone*')
     
     h_c = 1
     s_c = 5
